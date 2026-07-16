@@ -253,3 +253,62 @@ border-radius:10px;
 font-size:18px;
 
 }
+.cart-page{
+
+padding:60px;
+
+text-align:center;
+
+}
+
+
+
+.cart-item{
+
+background:white;
+
+color:#0B1F3A;
+
+padding:20px;
+
+margin:20px auto;
+
+max-width:500px;
+
+border-radius:15px;
+
+}
+
+
+
+.cart-item button{
+
+background:#D72638;
+
+color:white;
+
+border:none;
+
+padding:10px 20px;
+
+border-radius:8px;
+
+}
+
+
+
+.checkout{
+
+background:#0B1F3A;
+
+color:white;
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:10px;
+
+font-size:18px;
+
+}
