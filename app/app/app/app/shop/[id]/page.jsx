@@ -1,72 +1,82 @@
 "use client";
-import {useCart} from "@/context/CartContext";
-const cards = {
 
-1: {
-name: "Rookie Football Card",
-sport: "Football",
-player: "Star Quarterback",
-condition: "PSA 10",
-price: "$99.99",
-description:
-"Premium rookie football card for collectors."
-},
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 
-2: {
-name: "Baseball Rookie Card",
-sport: "Baseball",
-player: "Future MLB Star",
-condition: "Raw",
-price: "$49.99",
-description:
-"Modern baseball rookie card."
-},
+export default function Shop() {
 
 
-3: {
-name: "Basketball Rookie Card",
-sport: "Basketball",
-player: "NBA Rising Star",
-condition: "BGS 9.5",
-price: "$199.99",
-description:
-"High quality basketball collectible."
+const [cards,setCards] = useState([]);
+
+
+
+useEffect(() => {
+
+getCards();
+
+},[]);
+
+
+
+async function getCards(){
+
+
+const {data,error} = await supabase
+.from("cards")
+.select("*");
+
+
+
+if(error){
+
+console.log(error);
+
 }
 
-};
+else{
+
+setCards(data);
+
+}
 
 
-
-export default function ProductPage({params}) {
-
-const {addToCart} = useCart();
+}
 
 
-if(!card){
 
 return (
 
-<main>
+<main className="shop">
+
 
 <h1>
-Card Not Found
+Shop Sports Cards
 </h1>
 
-</main>
 
-);
-
-}
-
+<p>
+Football • Baseball • Basketball
+</p>
 
 
-return (
 
-<main className="product-page">
+<div className="product-grid">
 
 
-<div className="product-photo">
+{cards.map((card)=>(
+
+
+<div
+
+className="product-card"
+
+key={card.id}
+
+>
+
+
+<div className="card-image">
 
 🃏
 
@@ -74,17 +84,10 @@ return (
 
 
 
-<div className="product-info">
-
-
-<h1>
-{card.name}
-</h1>
-
-
 <h2>
-{card.price}
+{card.name}
 </h2>
+
 
 
 <p>
@@ -102,23 +105,23 @@ Condition: {card.condition}
 </p>
 
 
-<p>
-{card.description}
-</p>
+<h3>
+{card.price}
+</h3>
 
 
-<button
+<a href={`/shop/${card.id}`}>
 
-onClick={() => addToCart({
-id: params.id,
-...card
-})}
+View Card
 
->
+</a>
 
-Add To Cart
 
-</button>
+</div>
+
+
+))}
+
 
 
 </div>
