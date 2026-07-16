@@ -13,7 +13,8 @@ name:"",
 sport:"",
 player:"",
 condition:"",
-price:""
+price:"",
+image:""
 
 });
 
@@ -152,7 +153,17 @@ placeholder="Price"
 onChange={updateCard}
 
 />
+<input
 
+name="image"
+
+value={card.image}
+
+placeholder="Image URL"
+
+onChange={updateCard}
+
+/>
 
 
 <button
