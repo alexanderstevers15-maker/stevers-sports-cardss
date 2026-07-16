@@ -77,7 +77,43 @@ Remove
 
 
 
-<button className="checkout">
+<button
+
+className="checkout"
+
+onClick={async()=>{
+
+
+const response =
+await fetch("/api/checkout",{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json"
+
+},
+
+body:JSON.stringify({
+
+cart
+
+})
+
+});
+
+
+const data =
+await response.json();
+
+
+alert(data.message);
+
+
+}}
+
+>
 
 Checkout
 
