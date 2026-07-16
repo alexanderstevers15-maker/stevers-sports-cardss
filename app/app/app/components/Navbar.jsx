@@ -1,40 +1,71 @@
-export default function Navbar() {
-
-  return (
-
-    <nav className="navbar">
-
-      <h1>
-        Stevers Sports Cards
-      </h1>
+import Image from "next/image";
 
 
-      <div className="links">
+export default function Navbar(){
 
-        <a href="/">
-          Home
-        </a>
+return (
 
-        <a href="/shop">
-          Shop
-        </a>
+<nav className="navbar">
 
-        <a href="/about">
-          About
-        </a>
 
-        <a href="/contact">
-          Contact
-        </a>
+<div className="brand">
 
-        <a href="/cart">
-          🛒 Cart
-        </a>
 
-      </div>
+<Image
 
-    </nav>
+src="/images/logo.png"
 
-  );
+width={70}
+
+height={70}
+
+alt="Stevers Sports Cards Logo"
+
+/>
+
+
+<h1>
+Stevers Sports Cards
+</h1>
+
+
+</div>
+
+
+
+<div className="links">
+
+
+<a href="/">
+Home
+</a>
+
+
+<a href="/shop">
+Shop
+</a>
+
+
+<a href="/about">
+About
+</a>
+
+
+<a href="/contact">
+Contact
+</a>
+
+
+<a href="/cart">
+🛒 Cart
+</a>
+
+
+</div>
+
+
+</nav>
+
+);
 
 }
