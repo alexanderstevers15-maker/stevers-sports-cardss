@@ -78,10 +78,15 @@ key={card.id}
 
 <div className="card-image">
 
-🃏
+<img
+
+src={card.image}
+
+alt={card.name}
+
+/>
 
 </div>
-
 
 
 <h2>
