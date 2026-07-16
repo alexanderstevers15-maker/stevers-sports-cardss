@@ -1,9 +1,10 @@
 "use client";
 
-import {useState} from "react";
+import { useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 
-export default function Admin(){
+export default function Admin() {
 
 
 const [card,setCard] = useState({
@@ -24,7 +25,7 @@ setCard({
 
 ...card,
 
-[e.target.name]:e.target.value
+[e.target.name]: e.target.value
 
 });
 
@@ -32,11 +33,39 @@ setCard({
 
 
 
-function addCard(){
+async function addCard(){
 
-console.log(card);
+
+const {error} = await supabase
+.from("cards")
+.insert([card]);
+
+
+
+if(error){
+
+alert("Error adding card");
+
+console.log(error);
+
+}
+
+else{
 
 alert("Card Added!");
+
+setCard({
+
+name:"",
+sport:"",
+player:"",
+condition:"",
+price:""
+
+});
+
+}
+
 
 }
 
@@ -60,6 +89,8 @@ Stevers Sports Cards Admin
 
 name="name"
 
+value={card.name}
+
 placeholder="Card Name"
 
 onChange={updateCard}
@@ -72,7 +103,9 @@ onChange={updateCard}
 
 name="sport"
 
-placeholder="Sport"
+value={card.sport}
+
+placeholder="Football, Baseball, Basketball"
 
 onChange={updateCard}
 
@@ -83,6 +116,8 @@ onChange={updateCard}
 <input
 
 name="player"
+
+value={card.player}
 
 placeholder="Player Name"
 
@@ -96,7 +131,9 @@ onChange={updateCard}
 
 name="condition"
 
-placeholder="Condition (PSA 10, Raw)"
+value={card.condition}
+
+placeholder="PSA 10, Raw, BGS"
 
 onChange={updateCard}
 
@@ -107,6 +144,8 @@ onChange={updateCard}
 <input
 
 name="price"
+
+value={card.price}
 
 placeholder="Price"
 
