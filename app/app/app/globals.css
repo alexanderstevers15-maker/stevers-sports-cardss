@@ -373,3 +373,14 @@ border-radius:8px;
 font-size:18px;
 
 }
+.card-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:contain;
+
+border-radius:10px;
+
+}
