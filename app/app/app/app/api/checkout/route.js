@@ -4,22 +4,30 @@ import { NextResponse } from "next/server";
 export async function POST(request) {
 
 
-const body = await request.json();
-
-
-const cart = body.cart;
+const {cart} = await request.json();
 
 
 
-// Square checkout will be connected here
+const total = cart.reduce(
+
+(sum,item)=>
+
+sum + Number(
+item.price.replace("$","")
+),
+
+0
+
+);
+
 
 
 return NextResponse.json({
 
-message:
-"Checkout started",
+checkoutUrl:
+"#",
 
-cart
+total
 
 });
 
