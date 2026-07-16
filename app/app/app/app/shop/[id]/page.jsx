@@ -1,3 +1,5 @@
+"use client";
+import {useCart} from "@/context/CartContext";
 const cards = {
 
 1: {
@@ -38,8 +40,7 @@ description:
 
 export default function ProductPage({params}) {
 
-
-const card = cards[params.id];
+const {addToCart} = useCart();
 
 
 if(!card){
@@ -106,8 +107,17 @@ Condition: {card.condition}
 </p>
 
 
-<button>
+<button
+
+onClick={() => addToCart({
+id: params.id,
+...card
+})}
+
+>
+
 Add To Cart
+
 </button>
 
 
