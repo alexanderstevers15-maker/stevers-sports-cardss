@@ -112,3 +112,73 @@ text-decoration:none;
 margin-left:20px;
 
 }
+.shop {
+
+padding:50px;
+
+text-align:center;
+
+}
+
+
+.product-grid {
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+
+.product-card {
+
+background:white;
+
+color:#0B1F3A;
+
+padding:25px;
+
+border-radius:15px;
+
+}
+
+
+.card-image {
+
+height:200px;
+
+background:#ddd;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:60px;
+
+border-radius:10px;
+
+}
+
+
+.product-card a {
+
+display:inline-block;
+
+background:#D72638;
+
+color:white;
+
+padding:10px 20px;
+
+border-radius:8px;
+
+text-decoration:none;
+
+}
