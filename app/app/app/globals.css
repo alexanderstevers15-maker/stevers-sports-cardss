@@ -79,3 +79,36 @@ border-radius:15px;
 font-size:25px;
 
 }
+.navbar {
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:20px 40px;
+
+background:#050f20;
+
+border-bottom:2px solid #D72638;
+
+}
+
+
+.navbar h1 {
+
+color:#D72638;
+
+}
+
+
+.links a {
+
+color:white;
+
+text-decoration:none;
+
+margin-left:20px;
+
+}
