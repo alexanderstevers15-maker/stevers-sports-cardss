@@ -108,7 +108,8 @@ const data =
 await response.json();
 
 
-alert(data.message);
+window.location.href =
+data.checkoutUrl;
 
 
 }}
