@@ -384,3 +384,32 @@ object-fit:contain;
 border-radius:10px;
 
 }
+.info-page{
+
+padding:60px;
+
+max-width:800px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+
+.info-page h1{
+
+color:#D72638;
+
+font-size:45px;
+
+}
+
+
+.info-page p{
+
+font-size:20px;
+
+line-height:1.6;
+
+}
