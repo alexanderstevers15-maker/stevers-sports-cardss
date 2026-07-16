@@ -1,4 +1,5 @@
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 
 export const metadata = {
@@ -18,6 +19,8 @@ return (
 <html lang="en">
 
 <body>
+
+<Navbar />
 
 {children}
 
