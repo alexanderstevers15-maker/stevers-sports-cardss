@@ -413,3 +413,34 @@ font-size:20px;
 line-height:1.6;
 
 }
+.brand{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+.brand h1{
+
+color:#D72638;
+
+}
+
+
+.navbar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:20px 40px;
+
+background:#050f20;
+
+}
